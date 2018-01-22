@@ -5,13 +5,28 @@
   <script src="speednetworking.js"></script>
 </head>
 <body>
-  <button onclick="theTable.executeRotation()" style="font-size:25px;margin-left:118px">Rotate!</button>
-  <div id="container"></div>
+  <div style="margin-top:10vh">
+    <button onclick="theTable.executeRotation()" style=>Rotate!</button>
+    <div id="container"></div>
+  </div>
+  
 
   <script>
+    // Ghetto Responsiveness :)
+    let w = Math.max(document.documentElement.clientWidth, window.innerWidth || 0);
+    let h = Math.max(document.documentElement.clientHeight, window.innerHeight || 0);
+    let fontSize = 0.04918032786885 * w;
+    document.querySelector('button').style = `font-size:${fontSize}px;margin-left:${w*0.40}px`;
+
+    console.log('width:', w);
+
     $ = document.querySelectorAll.bind(document);
-    window.svgDoc = SVG('container').size(800, 1200);
-    let theTable = new Table(svgDoc, 50, 25, 5, 50);
+    window.svgDoc = SVG('container').size(w*0.9, h);
+    
+    let cellSize = w / 8;
+    let offset = cellSize * 1.6;
+
+    let theTable = new Table(svgDoc, offset, 0, 5, cellSize);
   </script>
 </body>
 </html>
