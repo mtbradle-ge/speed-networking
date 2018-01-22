@@ -6,8 +6,8 @@
 </head>
 <body>
   <div style="margin-top:10vh">
-    <button onclick="theTable.executeRotation()" style=>Rotate!</button>
     <div id="container"></div>
+    <button onclick="theTable.executeRotation()" style>Rotate!</button>
   </div>
   
 
@@ -20,12 +20,12 @@
 
     console.log('width:', w);
 
-    $ = document.querySelectorAll.bind(document);
-    window.svgDoc = SVG('container').size(w*0.9, h);
+    
     
     let cellSize = w / 8;
     let offset = cellSize * 1.6;
 
+    window.svgDoc = SVG('container').size(w*0.9, cellSize * 2.5);
     let theTable = new Table(svgDoc, offset, 0, 5, cellSize);
   </script>
 </body>
