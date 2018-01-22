@@ -5,13 +5,13 @@
   <script src="speednetworking.js"></script>
 </head>
 <body>
-  <button onclick='theTable.executeRotation()'>Rotate!</button>
+  <button onclick="theTable.executeRotation()" style="font-size:25px;margin-left:118px">Rotate!</button>
   <div id="container"></div>
 
   <script>
     $ = document.querySelectorAll.bind(document);
     window.svgDoc = SVG('container').size(800, 1200);
-    let theTable = new Table(svgDoc, 50, 25, 5, 25);
+    let theTable = new Table(svgDoc, 50, 25, 5, 50);
   </script>
 </body>
 </html>

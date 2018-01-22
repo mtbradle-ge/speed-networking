@@ -1,5 +1,4 @@
 TABLE_FONT = {
-  size: 22,
   family: 'Courier'
 };
 
@@ -20,7 +19,9 @@ class Person {
     this.cellX = cellX;
     this.cellY = cellY;
     this.x = table.x + cellX * table.cellSize;
-    this.y = table.y + cellY * table.cellSize;
+    this.y = table.y + cellY * table.cellSize * 1.2;
+
+    TABLE_FONT.size = table.cellSize * (22.0/25.0);
 
     this.element = svgDoc.text(this.label).font(TABLE_FONT).move(this.x, this.y);
 
@@ -41,7 +42,7 @@ class Person {
     this.cellY = newCell.y;
 
     this.x = this.table.x + this.cellX * this.table.cellSize;
-    this.y = this.table.y + this.cellY * this.table.cellSize;
+    this.y = this.table.y + this.cellY * this.table.cellSize * 1.2;
 
     moveText(this.element, this.x, this.y, 1000);
   }
