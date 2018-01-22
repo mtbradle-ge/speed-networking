@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script src="bower_components/svg.js/dist/svg.min.js"></script>
+  <script src="speednetworking.js"></script>
+</head>
+<body>
+  <button onclick='theTable.executeRotation()'>Rotate!</button>
+  <div id="container"></div>
+
+  <script>
+    $ = document.querySelectorAll.bind(document);
+    window.svgDoc = SVG('container').size(800, 1200);
+    let theTable = new Table(svgDoc, 50, 25, 5, 25);
+  </script>
+</body>
+</html>
